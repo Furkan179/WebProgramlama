@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CYv8K/po7/5N/81GoH16FeVteApIOHS3DoCumkxPnNNMXLqeRdxb8IqqDj2rhp2CMHI1+g34/yJt03OulBpR6Q==",
+  "dgSpecHash": "vjDIHVERsegohPc9JaJH3wE+7cAIacXeZUN4aM3O5P8qPOO4qAAuRGjuyGeleRt7lUq0ls3y/CN/dgFPEzlvDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emrul\\source\\repos\\ProjeOdevi\\ProjeOdevi\\ProjeOdevi.csproj",
+  "projectFilePath": "C:\\Users\\emrul\\Desktop\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emrul\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.10\\microsoft.aspnetcore.cryptography.internal.3.1.10.nupkg.sha512",
     "C:\\Users\\emrul\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.10\\microsoft.aspnetcore.cryptography.keyderivation.3.1.10.nupkg.sha512",
