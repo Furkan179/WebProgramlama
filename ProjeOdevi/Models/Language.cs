@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace ProjeOdevi.Models
 {
-	public class Dil
+	public class Language
 	{
 		public int Id { get; set; }
 
-		public string DilId { get; set; }
+		public string LanguageId { get; set; }
 
 	}
 }

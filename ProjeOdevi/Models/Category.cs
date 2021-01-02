@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace ProjeOdevi.Models
 {
-	public class Kategori
+	public class Category
 	{
 		public int Id { get; set; }
 		
-		public string KategoriAd { get; set; }
+		public string CategoryAd { get; set; }
 
-		//public ICollection<Film> Film { get; set; }
 	}
 }

@@ -5,7 +5,15 @@ using System.Threading.Tasks;
 
 namespace ProjeOdevi.Models
 {
-    public class Client
+    public class User
     {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public int Year { get; set; }
+
+        public string Description { get; set; }
+
     }
 }
