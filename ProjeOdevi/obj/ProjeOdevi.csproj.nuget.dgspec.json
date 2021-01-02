@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emrul\\Desktop\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj": {}
+    "C:\\Users\\berkx\\OneDrive\\Masaüstü\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emrul\\Desktop\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj": {
+    "C:\\Users\\berkx\\OneDrive\\Masaüstü\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emrul\\Desktop\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj",
+        "projectUniqueName": "C:\\Users\\berkx\\OneDrive\\Masaüstü\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj",
         "projectName": "ProjeOdevi",
-        "projectPath": "C:\\Users\\emrul\\Desktop\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj",
-        "packagesPath": "C:\\Users\\emrul\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emrul\\Desktop\\WebProgramlama\\ProjeOdevi\\obj\\",
+        "projectPath": "C:\\Users\\berkx\\OneDrive\\Masaüstü\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj",
+        "packagesPath": "C:\\Users\\berkx\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\berkx\\OneDrive\\Masaüstü\\WebProgramlama\\ProjeOdevi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\emrul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\berkx\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

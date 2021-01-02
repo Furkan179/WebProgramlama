@@ -14,9 +14,9 @@ namespace ProjeOdevi.Data
 		{
 		}
 
-		public DbSet<Film> Film { get; set; }
-		public DbSet<Dil> Dil { get; set; }
-		public DbSet<Kategori> Kategori { get; set; }
+		public DbSet<Car> Film { get; set; }
+		public DbSet<Language> Dil { get; set; }
+		public DbSet<Category> Kategori { get; set; }
 
 	}
 }
