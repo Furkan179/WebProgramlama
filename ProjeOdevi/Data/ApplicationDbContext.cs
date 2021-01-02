@@ -14,9 +14,12 @@ namespace ProjeOdevi.Data
 		{
 		}
 
-		public DbSet<Car> Film { get; set; }
 		public DbSet<Language> Dil { get; set; }
-		public DbSet<Category> Kategori { get; set; }
+		public DbSet<Category> Categori { get; set; }
+		public DbSet<City> City { get; set; }
+		public DbSet<State> State { get; set; }
+		public DbSet<User> User { get; set; }
+		public DbSet<Car> Car { get; set; }
 
 	}
 }

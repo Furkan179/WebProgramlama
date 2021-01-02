@@ -219,14 +219,96 @@ namespace ProjeOdevi.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ProjeOdevi.Models.Dil", b =>
+            modelBuilder.Entity("ProjeOdevi.Models.Car", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("DilId")
+                    b.Property<string>("CarName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Distance")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Fuel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("KategoriId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Model")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Year")
+                        .HasColumnType("int");
+
+                    b.Property<string>("gear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("Car");
+                });
+
+            modelBuilder.Entity("ProjeOdevi.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CategoryAd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categori");
+                });
+
+            modelBuilder.Entity("ProjeOdevi.Models.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("City");
+                });
+
+            modelBuilder.Entity("ProjeOdevi.Models.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("LanguageId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -234,62 +316,40 @@ namespace ProjeOdevi.Data.Migrations
                     b.ToTable("Dil");
                 });
 
-            modelBuilder.Entity("ProjeOdevi.Models.Film", b =>
+            modelBuilder.Entity("ProjeOdevi.Models.State", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Afis")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DilId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("FilmAd")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Fragman")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("IMDB_Puan")
-                        .HasColumnType("float");
-
-                    b.Property<int>("KategoriId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Konu")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Uzunluk")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Yıl")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DilId");
-
-                    b.HasIndex("KategoriId");
-
-                    b.ToTable("Film");
+                    b.ToTable("State");
                 });
 
-            modelBuilder.Entity("ProjeOdevi.Models.Kategori", b =>
+            modelBuilder.Entity("ProjeOdevi.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("KategoriAd")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Kategori");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -343,17 +403,15 @@ namespace ProjeOdevi.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ProjeOdevi.Models.Film", b =>
+            modelBuilder.Entity("ProjeOdevi.Models.Car", b =>
                 {
-                    b.HasOne("ProjeOdevi.Models.Dil", "Dil")
+                    b.HasOne("ProjeOdevi.Models.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("DilId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
-                    b.HasOne("ProjeOdevi.Models.Kategori", "Kategori")
+                    b.HasOne("ProjeOdevi.Models.Language", "Language")
                         .WithMany()
-                        .HasForeignKey("KategoriId")
+                        .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
