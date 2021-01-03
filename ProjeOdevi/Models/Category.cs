@@ -11,5 +11,6 @@ namespace ProjeOdevi.Models
 		
 		public string CategoryAd { get; set; }
 
-	}
+
+    }
 }

@@ -15,8 +15,6 @@ namespace ProjeOdevi.Models
 
 		public string Description { get; set; }
 
-		public string Model { get; set; }
-
 		public int Price { get; set; }
 
 		public string gear { get; set; }
@@ -27,13 +25,17 @@ namespace ProjeOdevi.Models
 
 		public int Distance { get; set; }
 
-		public int KategoriId { get; set; }
+		public int CategoryId { get; set; }
 
 		public Category Category { get; set; }
 
 		public int LanguageId { get; set; }
 
 		public Language Language { get; set; }
+
+		public Origin Origin { get; set; }
+
+		public string OriginId { get; set; }
 
 	}
 }

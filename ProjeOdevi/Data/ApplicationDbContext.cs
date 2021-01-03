@@ -20,6 +20,9 @@ namespace ProjeOdevi.Data
 		public DbSet<State> State { get; set; }
 		public DbSet<User> User { get; set; }
 		public DbSet<Car> Car { get; set; }
+		public DbSet<Modeli> Modeli { get; set; }
+		public DbSet<Origin> Origin { get; set; }
+
 
 	}
 }
