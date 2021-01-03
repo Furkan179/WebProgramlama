@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ProjeOdevi.Data;
 using ProjeOdevi.Models;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace ProjeOdevi.Controllers
 {
@@ -14,9 +16,12 @@ namespace ProjeOdevi.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        public CarsController(ApplicationDbContext context)
+        private readonly IWebHostEnvironment _hostingEnvironment;
+
+        public CarsController(ApplicationDbContext context, IWebHostEnvironment hostingEnvironment)
         {
             _context = context;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         // GET: Cars
@@ -59,10 +64,27 @@ namespace ProjeOdevi.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CarName,Year,Description,Price,gear,Color,Fuel,Distance,CategoryId,LanguageId,OriginId")] Car car)
+        public async Task<IActionResult> Create([Bind("Id,CarName,Year,Description,Price,gear,Color,Fuel,Image,Distance,CategoryId,LanguageId,OriginId")] Car car)
         {
             if (ModelState.IsValid)
             {
+                //******
+                string webRootPath = _hostingEnvironment.WebRootPath;
+                var files = HttpContext.Request.Form.Files;
+
+
+                string fileName = Guid.NewGuid().ToString();
+                var uploads = Path.Combine(webRootPath, @"images\web-images");
+                var extension = Path.GetExtension(files[0].FileName);
+
+                using (var fileStream = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                {
+                    files[0].CopyTo(fileStream);
+                }
+                car.Image = @"\images\web-images\" + fileName + extension;
+
+                //********
+
                 _context.Add(car);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -95,7 +117,7 @@ namespace ProjeOdevi.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CarName,Year,Description,Price,gear,Color,Fuel,Distance,CategoryId,LanguageId,OriginId")] Car car)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CarName,Year,Description,Price,gear,Color,Fuel,Image,Distance,CategoryId,LanguageId,OriginId")] Car car)
         {
             if (id != car.Id)
             {

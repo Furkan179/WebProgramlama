@@ -10,8 +10,8 @@ using ProjeOdevi.Data;
 namespace ProjeOdevi.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210103092743_EklenenTablolar")]
-    partial class EklenenTablolar
+    [Migration("20210103125150_Update")]
+    partial class Update
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -221,6 +221,24 @@ namespace ProjeOdevi.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("ProjeOdevi.Models.Admin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Admin");
+                });
+
             modelBuilder.Entity("ProjeOdevi.Models.Car", b =>
                 {
                     b.Property<int>("Id")
@@ -244,6 +262,9 @@ namespace ProjeOdevi.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Fuel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("LanguageId")

@@ -22,6 +22,7 @@ namespace ProjeOdevi.Data
 		public DbSet<Car> Car { get; set; }
 		public DbSet<Modeli> Modeli { get; set; }
 		public DbSet<Origin> Origin { get; set; }
+		public DbSet<ProjeOdevi.Models.Admin> Admin { get; set; }
 
 
 	}

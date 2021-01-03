@@ -34,6 +34,9 @@
                 @Html.DisplayNameFor(model => model.Fuel)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Distance)
             </th>
             <th>
@@ -71,6 +74,10 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Fuel)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Image)*@
+                <img src="@Url.Content(item.Image)" class="d-block w-50" asp-append-version="true" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Distance)

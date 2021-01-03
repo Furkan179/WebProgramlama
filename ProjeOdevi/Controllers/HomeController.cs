@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProjeOdevi.Models;
+using ProjeOdevi.Data;
 
 namespace ProjeOdevi.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ILogger<HomeController> _logger;
 
-		public HomeController(ILogger<HomeController> logger)
+		private readonly ApplicationDbContext _context;
+
+		public HomeController(ApplicationDbContext context)
 		{
-			_logger = logger;
+			_context = context;
 		}
 
 		public IActionResult Index()
@@ -26,6 +28,22 @@ namespace ProjeOdevi.Controllers
 		public IActionResult Privacy()
 		{
 			return View();
+		}
+		public IActionResult Kiralik()
+		{
+			var db = _context.Car;
+
+
+			return View(db.ToList());
+
+		}
+
+		public IActionResult Satilik()
+		{
+			var db = _context.Car;
+
+
+			return View(db.ToList());
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -23,6 +23,8 @@ namespace ProjeOdevi.Models
 		
 		public string Fuel { get; set; }
 
+		public string Image { get; set; }
+
 		public int Distance { get; set; }
 
 		public int CategoryId { get; set; }
