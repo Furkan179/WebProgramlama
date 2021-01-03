@@ -237,6 +237,63 @@ namespace ProjeOdevi.Data.Migrations
                     b.ToTable("Admin");
                 });
 
+            modelBuilder.Entity("ProjeOdevi.Models.BuyCar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CarName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Distance")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Fuel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("OriginId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OriginId1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Year")
+                        .HasColumnType("int");
+
+                    b.Property<string>("gear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("LanguageId");
+
+                    b.HasIndex("OriginId1");
+
+                    b.ToTable("BuyCar");
+                });
+
             modelBuilder.Entity("ProjeOdevi.Models.Car", b =>
                 {
                     b.Property<int>("Id")
@@ -377,6 +434,63 @@ namespace ProjeOdevi.Data.Migrations
                     b.ToTable("Origin");
                 });
 
+            modelBuilder.Entity("ProjeOdevi.Models.RentCar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CarName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Distance")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Fuel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("OriginId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("OriginId1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Year")
+                        .HasColumnType("int");
+
+                    b.Property<string>("gear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("LanguageId");
+
+                    b.HasIndex("OriginId1");
+
+                    b.ToTable("RentCar");
+                });
+
             modelBuilder.Entity("ProjeOdevi.Models.State", b =>
                 {
                     b.Property<int>("Id")
@@ -469,6 +583,25 @@ namespace ProjeOdevi.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ProjeOdevi.Models.BuyCar", b =>
+                {
+                    b.HasOne("ProjeOdevi.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjeOdevi.Models.Language", "Language")
+                        .WithMany()
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjeOdevi.Models.Origin", "Origin")
+                        .WithMany()
+                        .HasForeignKey("OriginId1");
+                });
+
             modelBuilder.Entity("ProjeOdevi.Models.Car", b =>
                 {
                     b.HasOne("ProjeOdevi.Models.Category", "Category")
@@ -493,6 +626,25 @@ namespace ProjeOdevi.Data.Migrations
                     b.HasOne("ProjeOdevi.Models.Origin", "Origin")
                         .WithMany()
                         .HasForeignKey("OriginId");
+                });
+
+            modelBuilder.Entity("ProjeOdevi.Models.RentCar", b =>
+                {
+                    b.HasOne("ProjeOdevi.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjeOdevi.Models.Language", "Language")
+                        .WithMany()
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjeOdevi.Models.Origin", "Origin")
+                        .WithMany()
+                        .HasForeignKey("OriginId1");
                 });
 
             modelBuilder.Entity("ProjeOdevi.Models.State", b =>

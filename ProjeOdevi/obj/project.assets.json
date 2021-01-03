@@ -9158,11 +9158,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emrul\\Desktop\\New folder\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj",
+      "projectUniqueName": "C:\\Users\\emrul\\Desktop\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj",
       "projectName": "ProjeOdevi",
-      "projectPath": "C:\\Users\\emrul\\Desktop\\New folder\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj",
+      "projectPath": "C:\\Users\\emrul\\Desktop\\WebProgramlama\\ProjeOdevi\\ProjeOdevi.csproj",
       "packagesPath": "C:\\Users\\emrul\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emrul\\Desktop\\New folder\\WebProgramlama\\ProjeOdevi\\obj\\",
+      "outputPath": "C:\\Users\\emrul\\Desktop\\WebProgramlama\\ProjeOdevi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\emrul\\AppData\\Roaming\\NuGet\\NuGet.Config",

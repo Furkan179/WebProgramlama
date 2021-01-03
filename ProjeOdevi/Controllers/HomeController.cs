@@ -7,12 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProjeOdevi.Models;
 using ProjeOdevi.Data;
+using Microsoft.Extensions.Localization;
 
 namespace ProjeOdevi.Controllers
 {
 	public class HomeController : Controller
 	{
-
 		private readonly ApplicationDbContext _context;
 
 		public HomeController(ApplicationDbContext context)
@@ -31,7 +31,7 @@ namespace ProjeOdevi.Controllers
 		}
 		public IActionResult Kiralik()
 		{
-			var db = _context.Car;
+			var db = _context.RentCar;
 
 
 			return View(db.ToList());
@@ -40,7 +40,7 @@ namespace ProjeOdevi.Controllers
 
 		public IActionResult Satilik()
 		{
-			var db = _context.Car;
+			var db = _context.BuyCar;
 
 
 			return View(db.ToList());
